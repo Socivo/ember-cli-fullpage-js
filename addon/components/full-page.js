@@ -1,14 +1,5 @@
 import Ember from 'ember';
-function clone(from, to) {
-    for (var key in to) {
-      if (from.hasOwnProperty(key)) {
-        var value = Ember.$.parseJSON(from[key]); // Please use Standard JSON, and text wrapped by ''
-        to[key] = value;
-      }
-    }
-  
-    return to;
-  }
+
 export default Ember.Component.extend({//Navigation
 menu: '#menu',
 lockAnchors: false,
@@ -82,12 +73,22 @@ afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
 onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){},
 didRender() {
     Ember.run.scheduleOnce('afterRender', this, function() {
-      var options = clone(this, this.options);
+      var options = this.clone(this, this.options);
       this.$().fullpage(options);
     });
 },
 
 willDestroyElement() {
     Ember.$.fn.fullpage.destroy('all');
-}
+},
+clone(from, to) {
+    for (var key in to) {
+      if (from.hasOwnProperty(key)) {
+        var value = Ember.$.parseJSON(from[key]); // Please use Standard JSON, and text wrapped by ''
+        to[key] = value;
+      }
+    }
+  
+    return to;
+  }
 });
