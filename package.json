@@ -1,6 +1,6 @@
 {
-  "name": "ember-cli-fullpage-js",
-  "version": "0.0.0",
+  "name": "ember-cli-full-page-js",
+  "version": "0.0.1",
   "description": "An Ember CLI wrapper for fullpage.js",
   "keywords": [
     "ember-addon"
