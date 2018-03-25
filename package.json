@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-fullpage-scroll-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Ember CLI wrapper for fullpage.js",
   "keywords": [
     "ember-addon"
