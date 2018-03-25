@@ -12,6 +12,8 @@ module.exports = {
   // afterInstall(options) {
   //   // Perform extra work here.
   // }
+  normalizeEntityName() {},
+
   afterInstall() {
     return this.addPackageToProject('fullpage.js');
   }
